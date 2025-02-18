@@ -1,0 +1,73 @@
+<!-- Top container Menu -->
+<div class="w3-top w3-large">
+    <div class="w3-bar w3-teal">
+        <button onclick="w3_open();" class="w3-bar-item w3-button w3-hover-red w3-hover-text-light-grey">
+            <i class="fas fa-indent"></i>
+        </button> 
+        <div style="display:none">
+            <button class="w3-bar-item w3-button w3-hover-red w3-hover-text-light-grey">                    
+                <%
+                    response.write("<a href='sys_mobilemenu'><i class='fas fa-home'></i></a>")
+                %>
+            </button>
+        </div>             
+        <!-- Company / Business unit -->
+        <span class="w3-bar-item" id="lblCompanyName" runat="server"></span>        
+
+        <div class="w3-right w3-dropdown-click">
+            <button onclick="DropdownProfiler()" class="w3-button sidebarcolor w3-hover-blue">
+                <asp:label id="lblUserTab" runat="server" width="150px" CssClass="Style: Class= w3-medium"></asp:label>
+                <i class="fas fa-caret-down w3-medium"></i>
+            </button>
+            
+            <div id="profiler" class="w3-dropdown-content w3-bar-block w3-card">
+                <button class="w3-btn w3-bar-item w3-left-align w3-light-grey">
+                    <span><i class="fas fa-user-circle"></i></span>
+                    <%response.write("<a class='w3-button w3-hover-pale-blue w3-medium' href='sys_my_profile'>Profile</a>")%>
+                </button>
+                <button class="w3-btn w3-bar-item w3-left-align w3-light-grey">
+                    <span><i class="fas fa-sign-out-alt"></i></span>
+                    <%response.write("<a class='w3-button w3-hover-pale-blue w3-medium' href='sys_login'>Logout</a>")%>
+                </button>
+            </div>
+        </div>
+        <div class="w3-right w3-dropdown-click">
+            <button onclick="DropdownNotif()" class="w3-button" title="Notifications">
+                <i class="fa fa-bell"></i><span class="w3-badge w3-right w3-small w3-red"><asp:label id="lblCountNotif" runat="server"></asp:label></span>
+            </button>     
+            <div id="notif" class="w3-dropdown-content w3-card-4 w3-bar-block" style="width:250px">
+                <asp:table id="tblNotif" runat="server" CellSpacing="5" CellPadding="2" Width="100%"></asp:table>
+            </div>
+        </div> 
+        <!-- <div class="w3-right w3-dropdown-click">
+            <button onclick="DropdownNotif()" class="w3-button w3-hover-blue">                    
+                <i class="fa fa-bell-o"></i><span class="w3-badge w3-red"><asp:label id="lblTotalCountNotif" runat="server" CssClass="Style: Class= w3-medium"></asp:label></span>
+            </button>                                   
+
+            <div id="notif" class="w3-dropdown-content w3-bar-block w3-card">                
+                <button class="w3-btn w3-bar-item w3-left-align w3-khaki w3-hover-red">                    
+                    <%response.write("<a class='w3-button w3-hover-red w3-small' href='inv_approval_list.aspx'>Invoices For Approval</a>")%><span class="w3-badge w3-red w3-small"><asp:label id="lblCountInvApproval" runat="server"></asp:label></span>
+                </button>  
+                <button class="w3-btn w3-bar-item w3-left-align w3-khaki w3-hover-red">                    
+                    <%response.write("<a class='w3-button w3-hover-red w3-small' href='inv_posting_list.aspx'>Invoices For Posting</a>")%><span class="w3-badge w3-red w3-small"><asp:label id="lblCountInvForPosting" runat="server"></asp:label></span>
+                </button>   
+                <button class="w3-btn w3-bar-item w3-left-align w3-khaki w3-hover-red">                    
+                    <%response.write("<a class='w3-button w3-hover-red w3-small' href='inv_replacement_list.aspx'>Invoices For Replacement</a>")%><span class="w3-badge w3-red w3-small"><asp:label id="lblCountInvReplacement" runat="server"></asp:label></span>
+                </button>
+                <button class="w3-btn w3-bar-item w3-left-align w3-khaki w3-hover-red">                    
+                    <%response.write("<a class='w3-button w3-hover-red w3-small' href='inv_receivable_list.aspx'>Invoices NYE</a>")%><span class="w3-badge w3-red w3-small"><asp:label id="lblCountInvNYE" runat="server"></asp:label></span>
+                </button>
+                <button class="w3-btn w3-bar-item w3-left-align w3-khaki w3-hover-red">                    
+                    <%response.write("<a class='w3-button w3-hover-red w3-small' href='inv_overdue_list.aspx'>Invoices Overdue</a>")%><span class="w3-badge w3-red w3-small"><asp:label id="lblCountInvOverDue" runat="server"></asp:label></span>
+                </button>
+                <button class="w3-btn w3-bar-item w3-left-align w3-khaki w3-hover-red">                    
+                    <%response.write("<a class='w3-button w3-hover-red w3-small' href='inv_recovery_list.aspx'>Invoices w/o Commitment</a>")%><span class="w3-badge w3-red w3-small"><asp:label id="lblCountInvWOCommitment" runat="server"></asp:label></span>
+                </button>
+                <button class="w3-btn w3-bar-item w3-left-align w3-khaki w3-hover-red">                    
+                    <%response.write("<a class='w3-button w3-hover-red w3-small' href='inv_payment_list.aspx'>Collections For Posting</a>")%><span class="w3-badge w3-red w3-small"><asp:label id="lblCountColForPosting" runat="server"></asp:label></span>
+                </button>                          
+            </div>
+        </div>     -->
+    </div>
+</div>
+<!-- End Top container Menu -->

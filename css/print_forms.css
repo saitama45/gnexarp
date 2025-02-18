@@ -1,0 +1,20 @@
+DIV.company_logo { 
+    POSITION: absolute;
+    PADDING-LEFT: 3em; 
+    TOP: 1px; 
+}
+
+IMG.company_logo {
+    height: 80px;
+    width: 250px;
+}
+
+IMG.created_esign {
+    height: 50px;
+    width: 130px;
+}
+
+IMG.approved_esign {
+    height: 50px;
+    width: 130px;
+}

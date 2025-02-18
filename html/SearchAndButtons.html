@@ -1,0 +1,56 @@
+<!-- Hidden Paginations -->
+<asp:textbox id="txtMorePage" style="POSITION: absolute; LEFT: 440px; Z-INDEX: 101; TOP: 8px" runat="server" Width="32px" Visible="False" Height="18px">0</asp:textbox>
+<asp:label id="Label2" style="POSITION: absolute; LEFT: 368px; Z-INDEX: 102; TOP: 8px" runat="server" Width="64px" Visible="False" Height="2px">More Page</asp:label>
+<asp:label id="Label3" style="POSITION: absolute; LEFT: 488px; Z-INDEX: 103; TOP: 8px" runat="server" Visible="False" Width="48px" Height="8px">Page #</asp:label>
+<asp:textbox id="txtPageNo" style="POSITION: absolute; LEFT: 544px; Z-INDEX: 104; TOP: 8px" runat="server" Visible="False" Width="32px" Height="18px">0</asp:textbox>
+<!-- End Hidden Paginations -->
+
+<!-- Pagination Buttons -->
+<div class="w3-cell-row">
+    <div class="w3-bar w3-margin-right w3-mobile w3-responsive">
+        <p>    
+            <asp:button id="btnApplyInvoice" CssClass="w3-bar-item w3-btn w3-green w3-mobile" tabIndex="15"
+                style="Z-INDEX: 0" runat="server" Visible="False" CausesValidation="False" Text="Apply Invoice"></asp:button>
+            <asp:button id="btnUnpost" CssClass="w3-bar-item w3-btn w3-blue w3-mobile" runat="server" Text="Unpost" Visible="False"></asp:button>
+            <asp:button id="btnBack" CssClass="w3-bar-item w3-btn w3-khaki w3-mobile" runat="server" Text="Back to List"
+                CausesValidation="False" Visible="False"></asp:button>       
+            <asp:LinkButton id="btnAddRecord" accessKey="R" runat="server" CssClass="w3-bar-item w3-block w3-btn w3-ripple w3-green w3-mobile"
+                Text="New Record" ToolTip="Add a new record. Alt-R." CausesValidation="False"></asp:LinkButton>            
+            <asp:button id="BtnFirst" accessKey="F" runat="server" CssClass="w3-bar-item w3-block w3-btn w3-ripple w3-blue-grey w3-mobile"
+                Text="(F)irst" ToolTip="Go to the first page of records. Alt-F." CausesValidation="False" Visible="False"></asp:button>
+            <asp:button id="btnPrevious" accessKey="P" runat="server" Text="(P)revious" CssClass="w3-bar-item w3-block w3-btn w3-ripple w3-blue-grey w3-mobile"
+                CausesValidation="False" ToolTip="Go to the previous page of records. Alt-P." Visible="False"></asp:button>
+            <asp:button id="BtnNext" accessKey="N" runat="server" Text="(N)ext" CssClass="w3-bar-item w3-block w3-btn w3-ripple w3-blue-grey w3-mobile"
+                CausesValidation="False" ToolTip="Go to the next page of records. Alt-N." Visible="False"></asp:button>
+            <asp:button id="btnLast" accessKey="L" runat="server" CssClass="w3-bar-item w3-block w3-btn w3-ripple w3-blue-grey w3-mobile"
+                Text="(L)ast" ToolTip="Go to the last page of records. Alt-L." CausesValidation="False" Visible="False"></asp:button>
+            <asp:panel id="panelSearchBy" runat="server" Visible="False">
+                <label id="lblSearchBy" class="w3-bar-item w3-block"><b>Search By:&nbsp;</b></label>
+                <asp:dropdownlist id="ddlSearchBy" runat="server" CssClass="w3-bar-item w3-tag w3-blue w3-hover-blue w3-mobile" AutoPostBack="False">
+                    <asp:ListItem Value="0">Billing #</asp:ListItem>
+                    <asp:ListItem Value="1" Selected="True">Invoice #</asp:ListItem>
+                    <asp:ListItem Value="2">Particulars</asp:ListItem>
+                    <asp:ListItem Value="3">BS Amount (w/o comma ",")</asp:ListItem> 
+                    <asp:ListItem Value="4">Client Name</asp:ListItem>        
+                </asp:dropdownlist>
+            </asp:panel>            
+            <asp:textbox id="txtSearch" class="w3-bar-item w3-input w3-white w3-border w3-mobile" accessKey="K" runat="server" Placeholder="Search.." MaxLength="50" onkeypress="return clickButton(event,'btnSearch')"></asp:textbox>
+            <asp:button id="btnSearch" accessKey="S" runat="server" Text="Go" CssClass="w3-bar-item w3-btn w3-green w3-mobile" CausesValidation="False" ToolTip="Press this button after typing your search key to perform search on the sorted column.  Alt-S."></asp:button>                                    
+            <asp:hyperlink id="hlViewFullTrail" class="w3-bar-item w3-tag w3-khaki w3-small w3-mobile" runat="server" Target="_blank" ToolTip="View transaction trail" Visible="False">Audit Trail</asp:hyperlink>            
+        </p>
+    </div>      
+</div>
+<!-- End Pagination Buttons -->
+<br>
+<!-- Page Records -->
+<div class="w3-padding w3-light-grey w3-bottombar w3-border-blue-grey w3-border w3-medium">
+    <asp:label id="lblPageRecordCount" runat="server" Height="16px" Visible="False">Records in this page - Page X of Y</asp:label>
+    &nbsp;Records per page:
+    <asp:dropdownlist id="ddlRecordsPerPage" runat="server" AutoPostBack="True">
+        <asp:ListItem Value="5">5</asp:ListItem>
+        <asp:ListItem Value="10">10</asp:ListItem>
+        <asp:ListItem Value="25">25</asp:ListItem>
+        <asp:ListItem Value="100" Selected="True">100</asp:ListItem>
+    </asp:dropdownlist>
+</div>
+<!-- End Page Records -->

@@ -1,0 +1,125 @@
+<nav id="mySidebar" class="w3-sidebar w3-indigo w3-animate-left" style="WIDTH: 250px; Overflow: auto; Position: fixed; bottom: 0px; z-index: 3; DISPLAY: none">		
+	<!-- Profile -->
+	<div class="w3-container w3-row">		
+		<button onclick="w3_open();" class="w3-button w3-hover-red w3-hover-text-light-grey w3-right">
+			<i class="fas fa-outdent"></i>
+		</button>
+		<div class="w3-container w3-col w3-center">			
+			<IMG style="WIDTH: 200px; margin-bottom: 20px" src="images/company_logo.png">
+		</div>	
+		<!-- <div class="w3-container w3-col w3-center">
+			<IMG class="w3-circle" style="WIDTH: 46px" src="images/img_avatar.png">
+		</div> -->
+		<div class="w3-col w3-bar w3-center">
+			<!-- <span>
+				Welcome<br>
+				<strong>
+					<asp:label id="lblUser" runat="server"></asp:label>
+				</strong>
+			</span> -->
+			<br>
+			<div class="w3-row">
+				<span><i class="fas fa-user-circle"></i></span>
+				<%response.write("<a class='w3-btn w3-hover-red' href='sys_my_profile'><span class='w3-text'>Profile</span></a>")%>
+				<span><i class="fas fa-sign-out-alt"></i></span>
+				<%response.write("<a class='w3-btn w3-hover-red' href='sys_login'><span class='w3-text'>Logout</span></a>")%>
+			</div>
+		</div>
+	</div>
+	<hr>
+	<!-- End Profile -->	
+	<!-- Menu Bars -->
+	<div class="w3-bar-block w3-card">
+		<asp:panel id="panelDashboard" style="Z-INDEX: 0" runat="server" Visible="false">				
+			<a href="#" class="w3-bar-item w3-button w3-padding w3-center"><i class="fa fa-users fa-fw"></i>  Dashboard</a>
+			<asp:label id="lblDashboard" runat="server" visible="false">Dashboard</asp:label>			
+			<asp:table id="tblDashboard" runat="server" Width="100%"></asp:table>
+		</asp:panel>
+		<asp:panel id="panelPO" style="Z-INDEX: 0" runat="server" Visible="false">
+			<button class="accordion w3-button w3-block w3-left-align w3-blue-grey w3-hover-blue">
+				<span><i class="fas fa-folder-plus"></i></span>
+				&nbsp;&nbsp;
+				<asp:label id="lblPO" runat="server">Purchase Order</asp:label>
+			</button>
+			<div id="menuPO" class="panel w3-hide w3-card-4 w3-light-grey">
+				<asp:table id="tblPO" runat="server" CellSpacing="5" CellPadding="2" Width="100%"></asp:table>
+			</div>
+		</asp:panel>
+		<asp:panel id="panelMyAccount" style="Z-INDEX: 0" runat="server" Visible="false">
+			<button class="accordion w3-button w3-block w3-left-align w3-blue-grey w3-hover-blue">
+				<span><i class="fas fa-hand-holding-medical"></i></span>
+				&nbsp;&nbsp;
+				<asp:label id="lblMyAccount" runat="server">Receiving</asp:label>
+			</button>
+			<div id="menuMyAccount" class="panel w3-hide w3-card-4 w3-light-grey">
+				<asp:table id="tblMyAccount" runat="server" CellSpacing="5" CellPadding="2" Width="100%"></asp:table>
+			</div>
+		</asp:panel>
+		<asp:panel id="panelInvoice" style="Z-INDEX: 0" runat="server" Visible="false">
+			<button class="accordion w3-button w3-block w3-left-align w3-blue-grey w3-hover-blue">
+				<span><i class="fas fa-file-invoice"></i></span>
+				&nbsp;&nbsp;
+				<asp:label id="lblInvoice" runat="server">Inventory</asp:label>
+			</button>
+			<div id="menuInvoice" class="panel w3-hide w3-card-4 w3-light-grey">
+				<asp:table id="tblInvoice" runat="server" CellSpacing="5" CellPadding="2" Width="100%"></asp:table>
+			</div>
+		</asp:panel>
+		<asp:panel id="panelAR" style="Z-INDEX: 0" runat="server" Visible="false">
+			<button class="accordion w3-button w3-block w3-left-align w3-blue-grey w3-hover-blue">
+				<span><i class="fas fa-minus-circle"></i></span>
+				&nbsp;&nbsp;
+				<asp:label id="lblAR" runat="server">Sales</asp:label>
+			</button>
+			<div id="menuAR" class="panel w3-hide w3-card-4 w3-light-grey">
+				<asp:table id="tblAR" runat="server" CellSpacing="5" CellPadding="2" Width="100%"></asp:table>
+			</div>
+		</asp:panel>
+		<asp:panel id="panelDR" style="Z-INDEX: 0" runat="server" Visible="false">
+			<button class="accordion w3-button w3-block w3-left-align w3-blue-grey w3-hover-blue">
+				<span><i class="fas fa-truck"></i></span>
+				&nbsp;&nbsp;
+				<asp:label id="lblDR" runat="server">Delivery</asp:label>
+			</button>
+			<div id="menuDR" class="panel w3-hide w3-card-4 w3-light-grey">
+				<asp:table id="tblDR" runat="server" CellSpacing="5" CellPadding="2" Width="100%"></asp:table>
+			</div>
+		</asp:panel>						
+		<asp:panel id="panelReports" style="Z-INDEX: 0" runat="server" Visible="false">
+			<button class="accordion w3-button w3-block w3-left-align w3-blue-grey w3-hover-blue">
+				<span><i class="fas fa-chart-bar"></i></span>
+				&nbsp;&nbsp;
+				<asp:label id="lblReports" runat="server">Reports</asp:label>
+			</button>
+			<div id="menuReports" class="panel w3-hide w3-card w3-light-grey">
+				<asp:table id="tblReports" runat="server" CellSpacing="5" CellPadding="2" Width="100%"></asp:table>
+			</div>
+		</asp:panel>
+		<asp:panel id="panelReference" style="Z-INDEX: 0" runat="server" Visible="false">
+			<button class="accordion w3-button w3-block w3-left-align w3-blue-grey w3-hover-blue">
+				<span><i class="fas fa-bezier-curve"></i></span>
+				&nbsp;&nbsp;
+				<asp:label id="lblReference" runat="server">References</asp:label>
+			</button>
+			<div id="menuReference" class="panel w3-hide w3-card w3-light-grey">
+				<asp:table id="tblReference" runat="server" CellSpacing="5" CellPadding="2" Width="100%"></asp:table>
+			</div>
+		</asp:panel>
+		<asp:panel id="panelSetting" style="Z-INDEX: 0" runat="server" Visible="false">
+			<button class="accordion w3-button w3-block w3-left-align w3-blue-grey w3-hover-blue">
+				<span><i class="fas fa-cogs"></i></i></span>
+				&nbsp;&nbsp;
+				<asp:label id="lblSetting" runat="server">Settings</asp:label>
+			</button>
+			<div id="menuSetting" class="panel w3-hide w3-card w3-light-grey">
+				<asp:table id="tblSetting" runat="server" Width="100%" CellPadding="2" CellSpacing="5"></asp:table>
+			</div>
+		</asp:panel>
+	</div>
+	<!-- End Menu Bars -->
+</nav>
+<!-- Overlay effect when opening sidebar on small screens -->
+
+<div onclick="w3_close()" id="myOverlay" title="close side menu" class="w3-overlay w3-animate-opacity"style="CURSOR: pointer"></div>
+
+<!-- End Overlay effect when opening sidebar on small screens -->

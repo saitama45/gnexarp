@@ -1,0 +1,12 @@
+<DIV class="w3-border-top">
+    <P>
+        <asp:button id="btnSave" tabIndex="30" CssClass="OnClick: document.getElementById('AlertSuccess').style.display='block'; class: w3-btn w3-green w3-block w3-large" runat="server" Text="Save"></asp:button>
+        <div style="display:none">
+            <asp:Button id="btnCancel" CssClass="class: w3-btn w3-red w3-large" runat="server" Text="Cancel"></asp:Button>
+        </div>
+        <SPAN>
+            <asp:validationsummary id="ValidationSummary1" runat="server" Width="492px" Visible="False" Height="24px" ShowMessageBox="True" ForeColor="Red"></asp:validationsummary>
+            <h2><asp:label id="lblMessage" runat="server" ForeColor="Red" Font-Size="18px"></asp:label></h2>
+        </SPAN>       
+    </P>    
+</DIV>

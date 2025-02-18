@@ -1,0 +1,15 @@
+<!-- Alert Notifications Panel -->
+<asp:panel id="panelSuccess" style="Z-INDEX: 0" runat="server" Visible="false">
+    <DIV id="AlertSuccess" class="w3-panel w3-green w3-border w3-animate-zoom w3-display-bottomright" style="margin: auto;MAX-WIDTH: 600px">
+        <H3 class="w3-text-white w3-medium">Successfully Saved!</H3>        
+    </DIV>    
+</asp:panel>
+<asp:panel id="panelInfo" style="Z-INDEX: 0" runat="server" Visible="false">
+    <DIV id="InfoSuccess" class="w3-panel w3-animate-left w3-center w3-xlarge" style="margin: auto;MAX-WIDTH: 600px">                
+        <p>
+            <i class="fas fa-exclamation-triangle w3-large"></i>
+            <asp:label id="lblValidate" runat="server" ForeColor="Red"></asp:label>
+        </p>
+    </DIV>
+</asp:panel>
+<!-- End Alert Notifications Panel -->

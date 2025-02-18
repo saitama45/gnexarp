@@ -1,0 +1,92 @@
+<FORM id="Form1" style="FONT: menu" method="post" runat="server">
+<!--header-->
+<div class="header">
+    <div class="top-header navbar navbar-default" style="display:none"><!--header-one-->
+        <div class="container">
+            <div class="nav navbar-nav wow fadeInLeft animated" data-wow-delay=".5s">
+                <div style="display:none">
+                    Welcome to <asp:label id="lblCompanyName" runat="server">CompanyName</asp:label> 
+                </div>                  
+                <p>                                      
+                    <a href="sys_login">Sign In </a>
+                </p>
+            </div>				
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="header-two navbar navbar-default"><!--header-two-->
+        <div class="container">
+            <div class="nav navbar-nav header-two-left">
+                <ul style="display:none">
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Tel: 02-7918-79-67 /  02-7966-43-78</li>
+                    <li><i class="glyphicon glyphicon-earphone" aria-hidden="true"></i>Globe/Viber: 0917-5029055</li>
+                    <li><i class="glyphicon glyphicon-envelope" aria-hidden="true"></i><a href="mailto:bambangmedical@gmail.com">bambangmedical@gmail.com</a></li>			
+                </ul>                
+            </div>
+            <div class="nav navbar-nav logo wow zoomIn animated" data-wow-delay=".7s">
+                <h1>
+                    <!-- <a href="sys_home">JEZHAN <b>INC.</b><span class="tag">Everything for Medical world </span> </a> -->
+                    <a href="sys_home"><IMG style="WIDTH: 200px" src="images/company_logo.png"></a>
+                </h1>
+            </div>
+            <div class="nav navbar-nav navbar-right header-two-right">
+                <div class="header-right my-account">
+                    <!-- <a href="contact.html"><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> CONTACT US</a>	-->
+                    <p class="top-header">                                      
+                        <a href="sys_login" class="top-header">Sign In </a>
+                    </p>				 
+                </div><br>
+                <div class="header-right cart">
+                    <a href="#"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span></a>
+                    <h4><a href="cart">
+                            &#8369;<asp:label id="lblTotalItemSRP" runat="server"></asp:label><span class="w3-badge w3-right w3-small w3-deep-orange"><asp:label id="lblTotalItemCount" runat="server"></asp:label></span> 
+                    </a></h4>                    
+                </div>
+                <div class="clearfix"> </div>
+            </div>
+            <div class="clearfix"> </div>
+        </div>
+    </div>
+    <div class="top-nav navbar navbar-default"><!--header-three-->
+        <div class="container">
+            <nav class="navbar" role="navigation">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                </div>
+                <!--navbar-header-->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav top-nav-info">
+                        <li><a href="sys_home" class="active">Home</a></li>    
+                        <li class="dropdown grid">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories<b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="myTabDrop1" id="myTabDrop1-contents">
+                                <li id="TopMenuCategories" runat="server"></li>
+                            </ul>
+                        </li>                                            
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Contact Us</a></li>				                        
+                        <li><a href="cart">My Cart</a></li>
+                        <li><a href="track_order">Track Order</a></li>
+                    </ul> 
+                    <div class="clearfix"> </div>
+                    <!--//navbar-collapse-->
+                    <header class="cd-main-header">
+                        <ul class="cd-header-buttons">
+                            <li><a class="cd-search-trigger" href="#cd-search"> <span></span></a></li>
+                        </ul> <!-- cd-header-buttons -->
+                    </header>
+                </div>
+                <!--//navbar-header-->
+            </nav>
+            <div id="cd-search" class="cd-search">
+                <asp:textbox id="txtSearch" runat="server" type="search"></asp:textbox>
+            </div>
+        </div>
+    </div>
+</div>
+<!--//header-->
